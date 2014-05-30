@@ -21,6 +21,7 @@ body {
 .footer {
     padding-left: 15px;
     padding-right: 15px;
+	padding-top: 20px;
 }
 
 /* Custom page header */
@@ -45,6 +46,7 @@ text-decoration: none;
     padding-top: 19px;
     color: #777;
     border-top: 1px solid #e5e5e5;
+	text-align: center;
 }
 
 .container-narrow > hr {
@@ -56,6 +58,7 @@ text-decoration: none;
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
 	background: rgba(255,255,255,0.8);
+	padding-bottom: 5px;
 }
 
 .jumbotron .btn {
@@ -110,4 +113,42 @@ text-decoration: none;
     .jumbotron {
         border-bottom: 0;
     }
+}
+
+/* Styling events table */
+.events {
+	display: table;
+	font-size: 10pt;
+	width: 100%;
+	text-align: left;
+}
+
+.events .event.header {
+	font-weight: bold;
+}
+
+.events .event {
+	display: table-row;
+}
+
+.events .event > div {
+	display: table-cell;
+}
+
+.events .event div:nth-child(1) {
+	width: 25%;
+}
+
+.add{
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: left;
+	margin-top: 20px;
+}
+
+.title{
+	text-align: left;
+	font-size: 12pt;
+	margin-bottom: 20px;
+	font-weight: bold;
 }

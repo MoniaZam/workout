@@ -7,12 +7,24 @@
     </ul>
 	<h3 class="text-muted"><a href="#">Biegaj z Nami</a></h3>
 </div>
-{{events}}
-{{eventowo}}
+
 <div class="jumbotron">
-	<div ng-repeat="event in events">
-	{{event.name}}
+	<div class="title">LISTA WYDARZEŃ</div>
+	<div class="events">
+		<div class="event header">
+			<div>Nazwa</div>
+			<div>Opis wydarzenia</div>
+			<div>Terminarz</div>
+		</div>
+		<div class="event" ng-repeat="event in events">
+				<div>{{event.name}}</div>
+				<div>{{event.description}}</div>
+				<div>{{event.timing}}</div>
+				<div>Usuń</div>
+				<div>Modyfikuj</div>
+		</div>
 	</div>
+	<div class="add">Dodaj nowe wydarzenie<div>
 </div>
 <div class="footer">
   <p>Studia podyplomowe projekt 2014 </p>
