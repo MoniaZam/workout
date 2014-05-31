@@ -10,11 +10,11 @@
 
 <div class="jumbotron">
 	<div class="title">Dodaj wydarzenie</div>
-	<form class="nowe" method="POST" action="#" ng-controller="EventsFormCtrl">
-		<input type="text" ng-model="form.name"/>
-		<textarea type="text" nng-modelame="form.description"/>
-		<input type="text" ng-model="form.timing"/>
-		<input type="submit" ngClick="Dodaj" />
+	<form class="nowe" ng-controller="EventsFormCtrl">
+		<input type="text" ng-model="event.name"/>
+		<textarea type="text" ng-model="event.description"/>
+		<input type="text" ng-model="event.timing"/>
+		<input type="submit" ng-click="dodaj(event)" />
 	</form>
 </div>
 <div class="footer">

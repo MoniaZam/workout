@@ -79,20 +79,20 @@ angular.module('runappsApp')
 		});
 		
 })
- .controller('EventsFormCtrl', function ($scope, $routeParams) {
+ .controller('EventsFormCtrl', function ($scope, $location, $routeParams) {
     
-	$scope.data = {
-        name: "default",
-        description: "default",
-        timing: "default"
-    };
-	
-    $scope.submitForm = function() {
-        console.log("posting data....");
-        $http.post('http://posttestserver.com/post.php?dir=jsfiddle', JSON.stringify(data)).success(function(){/*success callback*/});
-    };
+	 $scope.dodaj = function(event) {
+        var db = openDatabase('events', '1.0', 'Events DB', 2 * 1024 * 1024);
+		 
+		db.transaction(function (tx) {
+			var id;
+			tx.executeSql('SELECT max(id) as max FROM Events', [], function (tx, results) { 
+				id = parseInt(results.rows.item(0).max) + 1;
+				tx.executeSql('INSERT INTO Events (id, name, description, timing ) VALUES ('+id+',"'+event.name+'", "'+event.description+'", "'+event.timing+'")');
+			}, null);
+		});
 		
-})
- .controller('EventsAddCtrl', function ($scope, $routeParams) {
+		$location.path("/wydarzenia");
+    };
 		
 });

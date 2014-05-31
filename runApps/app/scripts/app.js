@@ -31,14 +31,14 @@ angular
       })
 	  .when('/grupy', {
         templateUrl: 'views/groups.html',
-        controller: 'GroupCtrl'
+        controller: 'GroupsCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
 	
-  }).run(function($rootScope) {
-		
+  }).run(function($rootScope) {		
+  
 		var db = openDatabase('events', '1.0', 'Events DB', 2 * 1024 * 1024);
 
 		db.transaction(function (tx) {
@@ -48,12 +48,14 @@ angular
 		   tx.executeSql('INSERT INTO Events (id, name, description, timing ) VALUES (2, "Rolkami po Krakowie", "Na rolkach wzdłóż Wisły", "Soboty 15:00")');	   
 		});
 		
+
+		
 		db.transaction(function (tx) {
 		   tx.executeSql('DROP TABLE Users');
 		   tx.executeSql('CREATE TABLE IF NOT EXISTS Users (id unique, group, firstname, secondname)');
 		   tx.executeSql('INSERT INTO Events (id, group, firstname, secondname ) VALUES (1, "Szybcy", "Jan", "Kowalski")');
 		   tx.executeSql('INSERT INTO Events (id, group, firstname, secondname ) VALUES (2, "Szybcy", "Gzegorz", "Szybki")');
 		   tx.executeSql('INSERT INTO Events (id, group, firstname, secondname ) VALUES (3, "Niedoscignieni", "Mateusz", "Kowal")');
-		   tx.executeSql('INSERT INTO Events (id, group, firstname, secondname ) VALUES (1, "Niedoscignieni", "Mariusz", "Dyby")');
+		   tx.executeSql('INSERT INTO Events (id, group, firstname, secondname ) VALUES (4, "Niedoscignieni", "Mariusz", "Dyby")');
 		});
 });
