@@ -19,11 +19,10 @@ angular
       })
 	  .when('/wydarzenia', {
         templateUrl: 'views/events.html',
-        controller: 'EventsCtrl'
       })
 	  .when('/grupy', {
         templateUrl: 'views/groups.html',
-        controller: 'GroupCtrl'
+        controller: 'GroupsCtrl'
       })
       .otherwise({
         redirectTo: '/'
@@ -38,5 +37,14 @@ angular
 		   tx.executeSql('CREATE TABLE IF NOT EXISTS Events (id unique, name, description, timing)');
 		   tx.executeSql('INSERT INTO Events (id, name, description, timing ) VALUES (1, "Areobik w parku", "Areobik w parku Jordana", "Codziennie 19:00")');
 		   tx.executeSql('INSERT INTO Events (id, name, description, timing ) VALUES (2, "Rolkami po Krakowie", "Na rolkach wzdłóż Wisły", "Soboty 15:00")');	   
+		});
+		
+		db.transaction(function (tx) {
+		   tx.executeSql('DROP TABLE Users');
+		   tx.executeSql('CREATE TABLE IF NOT EXISTS Users (id unique, group, firstname, secondname)');
+		   tx.executeSql('INSERT INTO Events (id, group, firstname, secondname ) VALUES (1, "Szybcy", "Jan", "Kowalski")');
+		   tx.executeSql('INSERT INTO Events (id, group, firstname, secondname ) VALUES (2, "Szybcy", "Gzegorz", "Szybki")');
+		   tx.executeSql('INSERT INTO Events (id, group, firstname, secondname ) VALUES (3, "Niedoscignieni", "Mateusz", "Kowal")');
+		   tx.executeSql('INSERT INTO Events (id, group, firstname, secondname ) VALUES (4, "Niedoscignieni", "Mariusz", "Dyby")');
 		});
 });
