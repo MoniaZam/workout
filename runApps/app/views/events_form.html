@@ -1,0 +1,23 @@
+<div ng-controller="EventsCtrl">
+<div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li><a href="#">Home</a></li>
+        <li class="active"><a href="#wydarzenia">Wydarzenia</a></li>
+        <li><a href="#grupy">Grupy</a></li>
+    </ul>
+	<h3 class="text-muted"><a href="#">Biegaj z Nami</a></h3>
+</div>
+
+<div class="jumbotron">
+	<div class="title">Dodaj wydarzenie</div>
+	<form class="nowe" method="POST" action="#" ng-controller="EventsFormCtrl">
+		<input type="text" ng-model="form.name"/>
+		<textarea type="text" nng-modelame="form.description"/>
+		<input type="text" ng-model="form.timing"/>
+		<input type="submit" ngClick="Dodaj" />
+	</form>
+</div>
+<div class="footer">
+  <p>Studia podyplomowe projekt 2014 </p>
+</div>
+</div>

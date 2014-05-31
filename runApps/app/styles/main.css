@@ -162,3 +162,23 @@ text-decoration: none;
 	font-weight: bold;
 }
 
+/* stylizuj formularz */
+form.nowe {
+	font-size: 10pt;
+	text-align: left;
+}
+
+form.nowe input{
+	height: 21pt;
+}
+
+form.nowe textarea{
+	width: 400px;
+}
+
+form.nowe input, form.nowe textarea{
+	display: block;
+	width: 200px;
+	margin: 5px;
+	font-size: 10pt;
+}

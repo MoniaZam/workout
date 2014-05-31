@@ -17,12 +17,21 @@ angular
         templateUrl: 'views/events.html',
         controller: 'EventsDeleteCtrl'
       })
+	  .when('/wydarzenia/nowe', {
+        templateUrl: 'views/events_form.html',
+        controller: 'EventsFormCtrl'
+      })
+	  .when('/wydarzenia/dodaj', {
+        templateUrl: 'views/events.html',
+        controller: 'EventsAddCtrl'
+      })
 	  .when('/wydarzenia', {
         templateUrl: 'views/events.html',
+        controller: 'EventsCtrl'
       })
 	  .when('/grupy', {
         templateUrl: 'views/groups.html',
-        controller: 'GroupsCtrl'
+        controller: 'GroupCtrl'
       })
       .otherwise({
         redirectTo: '/'
@@ -45,6 +54,6 @@ angular
 		   tx.executeSql('INSERT INTO Events (id, group, firstname, secondname ) VALUES (1, "Szybcy", "Jan", "Kowalski")');
 		   tx.executeSql('INSERT INTO Events (id, group, firstname, secondname ) VALUES (2, "Szybcy", "Gzegorz", "Szybki")');
 		   tx.executeSql('INSERT INTO Events (id, group, firstname, secondname ) VALUES (3, "Niedoscignieni", "Mateusz", "Kowal")');
-		   tx.executeSql('INSERT INTO Events (id, group, firstname, secondname ) VALUES (4, "Niedoscignieni", "Mariusz", "Dyby")');
+		   tx.executeSql('INSERT INTO Events (id, group, firstname, secondname ) VALUES (1, "Niedoscignieni", "Mariusz", "Dyby")');
 		});
 });

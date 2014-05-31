@@ -78,4 +78,21 @@ angular.module('runappsApp')
 			$scope.events = events;
 		});
 		
+})
+ .controller('EventsFormCtrl', function ($scope, $routeParams) {
+    
+	$scope.data = {
+        name: "default",
+        description: "default",
+        timing: "default"
+    };
+	
+    $scope.submitForm = function() {
+        console.log("posting data....");
+        $http.post('http://posttestserver.com/post.php?dir=jsfiddle', JSON.stringify(data)).success(function(){/*success callback*/});
+    };
+		
+})
+ .controller('EventsAddCtrl', function ($scope, $routeParams) {
+		
 });
